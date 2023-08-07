@@ -7,14 +7,17 @@
 
 #include "stdint.h"
 
-#define  RCC_BASE             0x40021000	 				     /* The reset and clock control base address   */
-#define  GPIOA_BASE           0x40010800					     /* The GPIO A base Address */
-#define  APB2ENR_OFFSET	      0x18    						     /* The APB2ENR Register Offset */
-#define  CRH_OFFSET           0x04       					     /* The CRH Register offset*/
-#define  ODR_OFFSET           0x0C						     /* The ODR Register offset */
-#define  RCC_APB2ENR          *((volatile uint32_t*)(RCC_BASE   + APB2ENR_OFFSET))   /* Pointer to APB2ENR register */
-#define  GPIOA_CRH            *((volatile uint32_t*)(GPIOA_BASE + CRH_OFFSET ))      /* Pointer to CRH register */
-#define  GPIOA_ODR            (*(((volatile unODR_t *)(GPIOA_BASE + ODR_OFFSET))))   /* Pointer to ODR register */
+#define  RCC_BASE             0x40021000	                /* The reset and clock control base address   */
+#define  GPIOA_BASE           0x40010800	                /* The GPIO A base Address */
+#define  APB2ENR_OFFSET	      0x18    	                        /* The APB2ENR Register Offset */
+#define  CRH_OFFSET           0x04                              /* The CRH Register offset*/
+#define  ODR_OFFSET           0x0C                              /* The ODR Register offset */
+#define  RCC_APB2ENR          *((volatile uint32_t*) \
+			      (RCC_BASE   + APB2ENR_OFFSET))    /* Pointer to APB2ENR register */
+#define  GPIOA_CRH            *((volatile uint32_t*) \
+			       (GPIOA_BASE + CRH_OFFSET ))      /* Pointer to CRH register */
+#define  GPIOA_ODR            (*(((volatile unODR_t *) \
+			       (GPIOA_BASE + ODR_OFFSET))))     /* Pointer to ODR register */
 #define  RCC_IOPAEN	       2
 
 /**********************************************************/
